@@ -1,0 +1,507 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-image: url(https://www.discoverthephilippines.com/wp-content/uploads/2024/09/article-cover-photo-what-to-see-camiguin.jpg);
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    width: auto;
+    background-size: cover;
+}
+#navBar{
+   display: flex;
+   justify-content: center;
+    transition: all .5s ease;
+
+    /*positioning*/
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: transform -.4s ease-in-out;
+}
+
+.navBar {
+    width: 800px;   
+    max-width: 90%;
+    display: flex;
+    padding: 20px 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 50px;
+
+    /* positioning*/
+
+    backdrop-filter: blur(10px);
+    margin-top: 80px;
+  
+  
+}
+
+.navdiv {
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: inline-block;
+    position: relative; /* Needed for ::after positioning */
+    text-decoration: none; /* Remove default underline */
+    color: inherit;
+    margin-left: 20px;
+}
+
+
+.navdiv::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: lightblue; /* Start color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for both */
+}
+
+.navdiv:hover::after,
+.navdiv:focus::after {
+    transform: scaleX(1);
+    background: blue; /* End color on hover */
+   
+}
+.slider-wrap{
+width: 100%;
+height: 100vh;
+position: relative;
+overflow: hidden;
+z-index: 1;
+
+}
+.slider-track{
+display: flex;
+width: 100%;
+height: 100%;
+transition: transform 0.5s ease-in-out ;
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    position: relative;
+    display: block;
+  
+}
+.slider-caption {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    top: 80%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: solid;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) ;
+}
+.main-caption{
+    width: 80%;
+    display: block;
+    position: absolute;
+    right:15%;
+    left: 10%;
+    top: 40%;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 110px;
+    font-family:'malibu', cursive;
+    text-decoration: solid;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) ;
+    text-align: center;
+    animation: captionIntro 0.7s ease-in-out;
+
+}
+
+@keyframes captionIntro {
+    0% {
+        opacity: 0;
+        transform:translateY(0)
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.slider-caption:first-child{
+    display: block;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+
+@font-face{
+    font-family: 'malibu';
+    src: url(assets/malibu.ttf);
+}
+
+
+.content-container{
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.main-intro{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+button{
+    border: none;
+}
+
+.card{
+    margin-bottom: 15px;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0, 0, 2px,  ;
+}
+.category-btn{
+border: none;
+color: black;
+transform: 0.5s ease-in-out;
+}
+.category-btn:hover{
+    color: blue;
+    transform: scale(1.05);
+}
+.category-btn.active p{
+    color: blue;
+}
+.category-btn.active svg{
+    color: blue;
+}
+.main-cont{
+    background-color: white;
+    width: 100%;
+    height: 1000px;
+    border:  2px solid transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* things-to-do-container */
+.caption-main{
+    margin-top: 30px;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+.caption-main h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.category-btnn{
+    margin-top: 20px;
+    size: 50%;
+}
+.category-btnn:hover{
+    color: aqua;
+}
+.main-container{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-top: 1px solid transparent;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.content-section{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+#water-adventure {
+    position: relative;
+    height: auto; /* adjust as needed */
+    overflow: hidden;
+    padding:100px 0;
+}
+
+#water-adventure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/jetski.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(75%);
+    z-index: 0; /* behind content */
+}
+
+#water-adventure .content {
+    position: relative;
+    z-index: 1; /* above blurred background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+#dive-snorkel {
+    position: relative;
+    height: auto; /* adjust as needed */
+    overflow: hidden;
+    padding:100px 0;
+}
+
+#dive-snorkel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/diving.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(75%);
+    z-index: 0; /* behind content */
+}
+
+#dive-snorkel .content {
+    position: relative;
+    z-index: 1; /* above blurred background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+
+#food {
+     position: relative;
+    height: auto; /* adjust as needed */
+    overflow: hidden;
+    padding:100px 0;
+}
+
+#food::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/lanzones.jpg.webp);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(75%);
+    z-index: 0; /* behind content */
+}
+
+#food .content {
+    position: relative;
+    z-index: 1; /* above blurred background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+#food {
+    position: relative;
+    height: auto; /* adjust as needed */
+    overflow: hidden;
+    padding:100px 0;
+}
+
+#food::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/lanzones.jpg.webp);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(75%);
+    z-index: 0; /* behind content */
+}
+
+#food .content {
+    position: relative;
+    z-index: 1; /* above blurred background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+#island-hopping {
+     position: relative;
+    height: auto; /* adjust as needed */
+    overflow: hidden;
+    padding:100px 0;
+}
+
+#island-hopping::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/Islandhop-jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(75%);
+    z-index: 0; /* behind content */
+}
+
+#island-hopping .content {
+    position: relative;
+    z-index: 1; /* above blurred background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+#festival {
+     position: relative;
+    height: auto; /* adjust as needed */
+    overflow: hidden;
+    padding:100px 0;
+}
+
+#festival::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/DT-Lanzones-Festival.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(75%);
+    z-index: 0; /* behind content */
+}
+
+#festival .content {
+    position: relative;
+    z-index: 1; /* above blurred background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+
+
+.card-wrapperz{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.crd{
+    width: 50%;
+    height: 250px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 15px;
+    background-color:rgba(123, 117, 117, 0.467);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.crd img{
+    position: absolute;
+    left: 28%;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+.crd h2{
+    position: relative;
+    left: 20%;
+    bottom: 30px;
+    margin-bottom: 100px;
+    font-size: 30px;
+}
+/* FOOTER */
+.footer {
+    background-color:rgb(75, 73, 70);
+    color: #fff;
+    padding: 50px 0 20px;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.socials li a {
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #bbb;
+}

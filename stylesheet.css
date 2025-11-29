@@ -1,0 +1,1107 @@
+
+body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-image: url(https://www.discoverthephilippines.com/wp-content/uploads/2024/09/article-cover-photo-what-to-see-camiguin.jpg);
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    width: auto;
+    background-size: cover;
+}
+#navBar{
+   display: flex;
+   justify-content: center;
+    transition: all .5s ease;
+
+    /*positioning*/
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: transform -.4s ease-in-out;
+}
+
+.navBar {
+    width: 800px;   
+    max-width: 90%;
+    display: flex;
+    padding: 20px 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 50px;
+
+    /* positioning*/
+
+    backdrop-filter: blur(10px);
+    margin-top: 80px;
+  
+  
+}
+
+.navdiv {
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: inline-block;
+    position: relative; /* Needed for ::after positioning */
+    text-decoration: none; /* Remove default underline */
+    color: inherit;
+    margin-left: 20px;
+}
+
+
+.navdiv::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: lightblue; /* Start color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for both */
+}
+
+.navdiv:hover::after,
+.navdiv:focus::after {
+    transform: scaleX(1);
+    background: blue; /* End color on hover */
+   
+}
+.slider-wrap{
+width: 100%;
+height: 100vh;
+position: relative;
+overflow: hidden;
+z-index: 1;
+
+}
+.slider-track{
+display: flex;
+width: 100%;
+height: 100%;
+transition: transform 0.5s ease-in-out ;
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    position: relative;
+    display: block;
+  
+}
+.slider-caption {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    top: 80%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: solid;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) ;
+}
+.main-caption{
+    width: 80%;
+    display: block;
+    position: absolute;
+    right:15%;
+    left: 10%;
+    top: 40%;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 110px;
+    font-family:'malibu', cursive;
+    text-decoration: solid;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) ;
+    text-align: center;
+    animation: captionIntro 0.7s ease-in-out;
+
+}
+
+@keyframes captionIntro {
+    0% {
+        opacity: 0;
+        transform:translateY(0)
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.slider-caption:first-child{
+    display: block;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+
+@font-face{
+    font-family: 'malibu';
+    src: url(assets/malibu.ttf);
+}
+/* where-to-go section */
+
+#placeholder{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 0;
+    border-top: 1px transparent solid;
+    border-bottom: 1px transparent solid;
+    display: flex;
+    flex: auto;
+}
+
+.intro-wrap{
+    width: 75%;
+    height:100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.intro{
+    padding: 20px 20px;
+    margin-top: 30px;
+    margin-left: 60px
+}
+.intro h3{
+    color:black;
+    font-weight: lighter;
+    font-size: 25px;
+    margin-bottom: 15px
+    ;
+}
+.intro h2{
+    font-size: 30px;
+    margin-bottom: 17px;
+    font-weight: bold;
+   
+  
+}
+.intro h4{
+    font-size: 15px;
+    line-height: 1.6;
+    color: black;
+    font-weight: lighter;
+}
+.btn-explore{
+    background-color: white;
+    color: black;
+    border: solid 2px black;
+    padding: 10px 50px;
+    display: inline-block ;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn-explore:hover{
+    background-color: black;
+    color: white;
+}
+/*categories part*/
+.categories{
+    display: flex;
+    position: relative;
+    justify-content: center;    
+    padding: 20px 20px;
+    gap: 30px;
+    width: 100%;
+    margin: top 0;;
+    padding: 75px 20px;
+    overflow: hidden;
+}
+.categories-wrapper{
+    height: 100vh;
+    width: 100vw;
+    margin:  0;
+    overflow: hidden;
+}
+.gallery{
+    display: flex;
+
+    gap: 4vmin;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(0,-50%);
+    user-select: none;
+    margin-top: 50px;
+}
+.card{
+    display: flex;
+    position: relative;
+    width: 30vmin;
+    height: 50vmin;
+    object-position: 100% center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card:hover{
+    transform: scale(1.08);
+    box-shadow: 0, 8px 20px rgba(0, 0,0, 0.25);
+}
+.card:hover img{
+    filter: brightness(80%);
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+.card-caption{
+position: absolute;
+  bottom: 25px;                       /* distance from bottom */
+  left: 50%;                           /* center horizontally */
+  color: white;
+  padding: 15px 40px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  text-shadow: 0, 8px 20px rgba(0, 0,0, 0.25);;
+  transform: translateY(-20px) translateX(-50%);
+  transition: 1.0s ease, transform 1.0s ease;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.card:hover .card-caption{
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* things to do  section*/
+
+#things-to-do-container{
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(216, 213, 213);
+    box-sizing: border-box;
+    border-top: 1px transparent solid;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.content-word{
+    display: flex;
+    
+}
+.content-word h2{
+    font-size:  40px;
+    margin-top: 20px;
+    margin-left: 60px;
+    width: 20%
+}
+.content-word h4{
+    font-weight: lighter;
+    width: 40%;
+    font-size: 25px;
+    line-height: 1.6;
+    margin-top: 20px;
+    
+    
+}
+.intro-caps{
+    margin-top: 50px;
+    font-size: 25px;
+    margin-left: 60px;
+}
+.btnn-things-to-do { 
+    background-color: rgb(216, 213, 213);
+    color: black;
+    border: solid 2px black;
+    padding:15px 15px;
+    font-size: 20px;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    border-radius :50px;
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+.btnn-things-to-do:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btnn-things-to-do:hover{
+    background-color: black;
+    color: white;
+}
+.things-to-do-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Center vertically if needed */
+}
+
+.things-to-do-card-container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;      
+    padding: 20px;
+    width: 100%;  
+    overflow: hidden;
+}
+
+.card-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* center horizontally */
+    gap: 15px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-th{
+    margin-top: 40px;
+    width: 250px;
+    height:300px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* centers icons/text inside the square */
+    text-align: center;
+    transition: 0.3s;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card-title{
+    color: white;
+}
+#th1{
+    background-image: url(assets/jetsking.jpg);
+}
+#th2{
+    background-image: url(assets/camiguin-snorkeling.jpg);
+}
+#th3{
+    background-image: url(assets/ceviche-kinilaw.jpg);
+}
+#th4{
+    background-image: url(assets/mantigue-island.jpg);
+}
+#th5{
+    background-image: url(assets/lanzones\ festival.jpg);
+}
+.card-th:hover{
+    transform: scale(1.05); 
+    filter: brightness(75%);
+}
+
+/* about page */
+#placeholder-about{
+    background-color: white;
+    border-top: 1px solid transparent;
+}
+
+.culture-section {
+    display: flex;
+    align-items: flex-start; /* aligns top of both columns */
+    gap: 20px; /* space between text and images */
+}
+
+.culture-section .text {
+    flex: 1; /* takes 50% or proportional width */
+    text-align: left;
+}
+
+.culture-section .images {
+    flex: 1; /* same width as text */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* space between images */
+}
+
+.culture-section .images img {
+    width: 100%; /* make images fit column */
+    height: auto;
+    border-radius: 5px;
+}   
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.blur-background {
+    position: relative;
+    background: url('https://lakbaypinas.com/wp-content/uploads/2024/09/74159075_2556886121070504_5978425370284654592_n.jpg') center/cover no-repeat;
+    filter: blur(5px);  /* background blur */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Create a content layer that is in focus */
+.blur-background .text,
+.blur-background .images {
+    position: relative;
+    filter: none; /* remove blur for text and images */
+    background-color: rgba(255, 255, 255, 0.8); /* optional for readability */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Optional: spacing for paragraph */
+.blur-background .text p {
+    line-height: 1.5;
+}
+
+.culture-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.culture-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://lakbaypinas.com/wp-content/uploads/2024/09/74159075_2556886121070504_5978425370284654592_n.jpg') center/cover no-repeat;
+    filter: blur(8px); /* only background is blurred */
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.culture-content {
+    position: relative;
+    z-index: 1; /* put content above the blurred background */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* semi-transparent for readability */
+    border-radius: 10px;
+}
+
+.culture-content .text {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.culture-content .images {
+    flex: 1;
+}
+
+.culture-content .images img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* General content styling */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  text-align: justify;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+/* Flex layout for paragraph + image */
+.flex-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.flex-content p {
+  flex: 1;
+}
+
+.flex-content img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Base blur background (shared by all) */
+.blur-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: blur(8px);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Background image 1 */
+.bg1 {
+  background-image: url("https://lakbaypinas.com/wp-content/uploads/2024/09/74159075_2556886121070504_5978425370284654592_n.jpg");
+}
+
+/* Background image 2 */
+.bg2 {
+  background-image: url("https://davaotoday.com/wp-content/uploads/2020/10/DT-Lanzones-Festival.jpg");
+}
+
+.bg3 {
+    background-image: url("https://pixelstorybiz.wordpress.com/wp-content/uploads/2019/06/65245395_354201205291342_3217573353934028800_o-1.jpg");
+}
+.bg4 {
+    background-image: url("https://eazytraveler.net/wp-content/uploads/2022/01/camiguin-birdwatching-hibok-hibok.jpg");
+}
+.bg5 {
+    background-image: url("https://freedomwall.net/files/2014/03/camiguin-stations-of-the-cross-lamentation.jpg");
+}
+
+
+/* Content box */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  color: white;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.description {
+  text-align: justify; /* Makes both sides aligned neatly */
+  line-height: 1.6;   /* Adds space between lines for readability */
+  font-size: 16px;    /* Adjusts the text size */
+  max-width: 600px;   /* Prevents text from stretching too wide */
+  margin: 20px auto;  /* Centers the block horizontally */
+  color: #333;        /* Makes text a softer color for easier reading */
+}
+
+
+/* footer */
+/* FOOTER */
+.footer {
+    background-color:rgb(75, 73, 70);
+    color: #fff;
+    padding: 50px 0 20px;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.socials li a {
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #bbb;
+}
+
+
+/* MEDIA QUERIES FOR RESPONSIVENSS */
+
+/* ===========================
+   RESPONSIVE: TABLETS & MOBILE
+=========================== */
+
+/* ----- Navbar ----- */
+@media screen and (max-width: 1024px) {
+    .navBar {
+        width: 95%;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .navdiv {
+        margin-left: 10px;
+        padding: 8px;
+    }
+}
+
+/* ----- Slider ----- */
+@media screen and (max-width: 1024px) {
+    .main-caption {
+        font-size: 80px;
+        top: 35%;
+    }
+
+    .slider-caption {
+        font-size: 18px;
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-caption {
+        font-size: 50px;
+        top: 30%;
+        padding: 5px 10px;
+    }
+
+    .slider-caption {
+        font-size: 16px;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 10px;
+    }
+}
+
+/* ----- Intro / Placeholder section ----- */
+@media screen and (max-width: 1024px) {
+    #placeholder {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    .intro-wrap {
+        width: 90%;
+        margin-left: 0;
+    }
+
+    .intro h2 {
+        font-size: 28px;
+    }
+
+    .intro h3 {
+        font-size: 20px;
+    }
+
+    .intro h4 {
+        font-size: 14px;
+    }
+
+    .btn-explore {
+        padding: 10px 40px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .intro h2 {
+        font-size: 24px;
+    }
+
+    .intro h3 {
+        font-size: 18px;
+    }
+
+    .intro h4 {
+        font-size: 12px;
+    }
+
+    .btn-explore {
+        padding: 8px 25px;
+        font-size: 12px;
+    }
+}
+
+/* ----- Categories / Cards ----- */
+@media screen and (max-width: 1024px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .gallery {
+        flex-wrap: wrap;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        justify-content: center;
+    }
+
+    .card {
+        width: 45vmin;
+        height: 40vmin;
+    }
+
+    .card-caption {
+        font-size: 18px;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 70vw;
+        height: 50vw;
+    }
+
+    .card-caption {
+        font-size: 16px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 90vw;
+        height: 60vw;
+    }
+
+    .card-caption {
+        font-size: 14px;
+        width: 80px;
+        padding: 8px 10px;
+    }
+}
+
+/* ----- Footer ----- */
+@media screen and (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 16px;
+    }
+
+    .footer-section p,
+    .footer-section ul li {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+
+/* ----- Things-to-Do / Cards ----- */
+@media screen and (max-width: 1024px) {
+    .things-to-do-card-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card-th {
+        width: 200px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-th {
+        width: 150px;
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-th {
+        width: 120px;
+        height: 150px;
+    }
+    .btnn-things-to-do {
+        font-size: 14px;
+        padding: 10px 10px;
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+.culture-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* adjust blur amount */
+    z-index: 1;
+}
+
+.culture-content {
+    position: relative;
+    z-index: 2; /* bring content above blurred background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 30px;
+}
+
+.culture-section {
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 50px;
+}
+
+/* about page */
+#placeholder-about{
+    background-color: white;
+    border-top: 1px solid transparent;
+}
+
+.culture-section {
+    display: flex;
+    align-items: flex-start; /* aligns top of both columns */
+    gap: 20px; /* space between text and images */
+}
+
+.culture-section .text {
+    flex: 1; /* takes 50% or proportional width */
+    text-align: left;
+}
+
+.culture-section .images {
+    flex: 1; /* same width as text */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* space between images */
+}
+
+.culture-section .images img {
+    width: 100%; /* make images fit column */
+    height: auto;
+    border-radius: 5px;
+}   
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.blur-background {
+    position: relative;
+    background: url('https://lakbaypinas.com/wp-content/uploads/2024/09/74159075_2556886121070504_5978425370284654592_n.jpg') center/cover no-repeat;
+    filter: blur(5px);  /* background blur */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Create a content layer that is in focus */
+.blur-background .text,
+.blur-background .images {
+    position: relative;
+    filter: none; /* remove blur for text and images */
+    background-color: rgba(255, 255, 255, 0.8); /* optional for readability */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Optional: spacing for paragraph */
+.blur-background .text p {
+    line-height: 1.5;
+}
+
+.culture-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.culture-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://lakbaypinas.com/wp-content/uploads/2024/09/74159075_2556886121070504_5978425370284654592_n.jpg') center/cover no-repeat;
+    filter: blur(8px); /* only background is blurred */
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.culture-content {
+    position: relative;
+    z-index: 1; /* put content above the blurred background */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* semi-transparent for readability */
+    border-radius: 10px;
+}
+
+.culture-content .text {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.culture-content .images {
+    flex: 1;
+}
+
+.culture-content .images img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* General content styling */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  text-align: justify;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+/* Flex layout for paragraph + image */
+.flex-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.flex-content p {
+  flex: 1;
+}
+
+.flex-content img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Base blur background (shared by all) */
+.blur-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: blur(8px);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.bg6 {
+  background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/61/b8/e7/white-island-is-an-uninhabited.jpg?w=700&h=-1&s=1");
+}
+
+.bg7 {
+  background-image: url("https://thefroggyadventures.com/wp-content/uploads/2024/10/tuasan-falls-camiguin.jpg");
+}
+
+.bg8 {
+    background-image: url("https://pixelstorybiz.wordpress.com/wp-content/uploads/2019/06/65245395_354201205291342_3217573353934028800_o-1.jpg");
+}
+.bg9 {
+    background-image: url("https://eazytraveler.net/wp-content/uploads/2022/01/camiguin-birdwatching-hibok-hibok.jpg");
+}
+.bg10 {
+    background-image: url("https://freedomwall.net/files/2014/03/camiguin-stations-of-the-cross-lamentation.jpg");
+}
+
+
+/* Content box */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  color: white;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.description {
+  text-align: justify; /* Makes both sides aligned neatly */
+  line-height: 1.6;   /* Adds space between lines for readability */
+  font-size: 16px;    /* Adjusts the text size */
+  max-width: 600px;   /* Prevents text from stretching too wide */
+  margin: 20px auto;  /* Centers the block horizontally */
+  color: #333;        /* Makes text a softer color for easier reading */
+}
