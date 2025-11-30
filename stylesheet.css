@@ -293,7 +293,8 @@ position: absolute;
 
 #things-to-do-container{
     width: 100%;
-    height: 1000px;
+    height: auto;
+    min-height: 1000px;
     background-color: rgb(216, 213, 213);
     box-sizing: border-box;
     border-top: 1px transparent solid;
@@ -358,27 +359,31 @@ position: absolute;
 
 .things-to-do-card-container{
     display: flex;
+    flex-wrap: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     gap: 30px;      
     padding: 20px;
-    width: 100%;  
+    width: 100%;
+    height: auto;
     overflow: hidden;
 }
 
 .card-wrap{
     display: flex;
+    flex-wrap:wrap;
     justify-content: center;
     align-items: center;  /* center horizontally */
     gap: 15px;
-    transition: transform 0.5s ease-in-out;
 }
 
 .card-th{
     margin-top: 40px;
     width: 250px;
-    height:500px;
+    height: auto;
+    min-height:500px;
+    overflow: visible;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -974,4 +979,403 @@ body {
   max-width: 600px;   /* Prevents text from stretching too wide */
   margin: 20px auto;  /* Centers the block horizontally */
   color: #333;        /* Makes text a softer color for easier reading */
+}
+/* --- RESPONSIVE DESIGN MEDIA QUERIES --- */
+
+/* Tablet and Small Desktop Adjustments */
+@media (max-width: 992px) {
+    /* Main Navigation */
+    .navBar {
+        width: 90%; /* Use more width on smaller screens */
+        padding: 15px 10px;
+        margin-top: 20px; /* Bring it closer to the top */
+        font-size: 18px;
+    }
+    
+    .navdiv {
+        margin-left: 10px; /* Reduce spacing between nav items */
+    }
+
+    /* Hero Caption */
+    .main-caption {
+        font-size: 80px; /* Reduce font size for smaller screens */
+        top: 35%; /* Adjust vertical position */
+    }
+
+    /* Where to Go Section - Layout */
+    #placeholder {
+        height: auto; /* Allow content to dictate height */
+        padding: 40px 0;
+        flex-direction: column; /* Stack intro content and image placeholder */
+    }
+    
+    .intro-wrap {
+        width: 95%; /* Use almost full width */
+        margin: 0 auto;
+    }
+
+    .intro {
+        margin-left: 20px;
+    }
+    
+    .intro h2 {
+        font-size: 28px;
+    }
+
+    /* Things To Do Section - Text/Intro */
+    .content-word {
+        flex-direction: column; /* Stack heading and description */
+        padding: 0 20px;
+    }
+
+    .content-word h2,
+    .content-word h4 {
+        width: 100%; /* Take full width */
+        margin-left: 0;
+        text-align: left;
+    }
+    
+    .content-word h2 {
+        font-size: 35px;
+    }
+    
+    .content-word h4 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    
+    .intro-caps {
+        margin-left: 20px;
+        font-size: 22px;
+    }
+    
+    .btnn-things-to-do {
+        margin: 20px 20px; /* Adjust button positioning */
+    }
+}
+/* Card Galleries (Where to Go & Things to Do) */
+@media (max-width: 992px) {
+    .categories-wrapper {
+        height: auto; /* Allow height to adjust */
+        padding: 40px 0;
+    }
+
+    .gallery {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none; /* Remove absolute positioning and transform */
+        flex-wrap: wrap; /* Allow cards to wrap to the next line */
+        justify-content: center;
+        gap: 20px; /* Adjust gap */
+        margin-top: 0;
+        padding: 20px 0;
+    }
+
+    .card {
+        width: 40vmin; /* Make cards a bit larger but still responsive */
+        height: 60vmin;
+    }
+    
+    .things-to-do-card-container {
+        flex-wrap: wrap; /* Allow cards to wrap */
+    }
+
+    .card-th {
+        width: 90%; /* Smaller fixed width for mobile cards */
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    .card-wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+/* About Page Section */
+@media (max-width: 992px) {
+    .content {
+        max-width: 90%;
+        padding: 30px 15px;
+        margin: 0 auto 30px auto;
+    }
+    
+    .flex-content {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
+    }
+
+    .flex-content p {
+        flex: auto; /* Take full available width */
+    }
+
+    .flex-content img {
+        max-width: 100%; /* Use full width of the content box */
+        flex: auto;
+    }
+    
+    .culture-content {
+        flex-direction: column; /* Stack text and images */
+        padding: 15px;
+    }
+    
+    .culture-content .text,
+    .culture-content .images {
+        flex: auto;
+    }
+}
+
+/* Contact Form */
+@media (max-width: 992px) {
+    #inquiryForm {
+        width: 95%;
+    }
+    
+    #inquiryForm button {
+        max-width: 100%; /* Allow button to stretch */
+    }
+}
+
+/* Footer Section */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack footer sections */
+        align-items: center; /* Center content */
+    }
+
+    .footer-section {
+        width: 90%; /* Take almost full width */
+        min-width: unset;
+        text-align: center;
+    }
+
+    .footer-section ul {
+        display: flex; /* Make links horizontal for cleaner look */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-section ul li {
+        margin: 0 10px 8px 10px; /* Add horizontal spacing */
+    }
+}
+
+/* Specific Mobile Adjustments */
+@media (max-width: 576px) {
+    /* Hero Caption */
+    .main-caption {
+        font-size: 50px; /* Smaller size for small phones */
+    }
+    
+    /* Card Gallery - Mobile */
+    .card {
+        width: 80vw; /* Single column of cards on very small screens */
+        height: 100vw;
+    }
+    
+    /* Things To Do Cards - Mobile */
+    .card-th {
+        width: 90%; /* Cards take up most of the screen width */
+        height: 350px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE CSS — ADD THIS AT THE BOTTOM
+===============================================*/
+
+/* ======= 1200px and below (large tablets & small laptops) ======= */
+@media (max-width: 1200px) {
+    .navBar {
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+    .main-caption {
+        font-size: 90px;
+    }
+}
+
+/* ======= 992px and below (tablets) ======= */
+@media (max-width: 992px) {
+
+    /* Navbar */
+    .navBar {
+        padding: 12px 15px;
+        font-size: 18px;
+    }
+
+    /* Slider */
+    .slider-wrap {
+        height: 70vh;
+    }
+    .slide {
+        height: 70vh;
+    }
+    .main-caption {
+        font-size: 60px;
+        width: 90%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .slider-caption {
+        font-size: 20px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Categories */
+    .gallery {
+        flex-wrap: wrap;
+        left: 5%;
+        transform: none;
+        top: auto;
+        position: relative;
+    }
+    .card {
+        width: 40vmin;
+        height: 55vmin;
+    }
+
+    /* Things to do */
+    .things-to-do-card-container {
+        flex-wrap: wrap;
+    }
+}
+
+/* ======= 768px and below (mobile large) ======= */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navBar {
+        font-size: 16px;
+        border-radius: 30px;
+    }
+
+    /* Slider */
+    .slider-wrap {
+        height: 60vh;
+    }
+    .slide {
+        height: 60vh;
+    }
+    .main-caption {
+        font-size: 42px;
+        width: 90%;
+        top: 50%;
+    }
+    .slider-caption {
+        font-size: 17px;
+    }
+
+    /* Intro / Where to go */
+    .intro {
+        margin-left: 20px;
+    }
+    .intro h2 {
+        font-size: 25px;
+    }
+
+    /* Categories */
+    .gallery {
+        justify-content: center;
+        gap: 25px;
+        left: 0;
+    }
+    .card {
+        width: 60vmin;
+        height: 70vmin;
+    }
+
+    /* Things to do */
+    .content-word {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .content-word h2 {
+        width: 100%;
+    }
+    .content-word h4 {
+        width: 100%;
+    }
+
+    /* Contact form */
+    #inquiryForm {
+        width: 95%;
+    }
+
+    /* Footer */
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ======= 576px and below (mobile small) ======= */
+@media (max-width: 576px) {
+
+    /* Navbar */
+    .navBar {
+        max-width: 95%;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .navdiv {
+        margin-left: 10px;
+    }
+
+    /* Slider */
+    .slider-wrap {
+        height: 50vh;
+    }
+    .slide {
+        height: 50vh;
+    }
+    .main-caption {
+        font-size: 32px;
+        top: 55%;
+    }
+    .slider-caption {
+        font-size: 15px;
+        bottom: 10px;
+    }
+
+    /* Categories */
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .card {
+        width: 80vmin;
+        height: 90vmin;
+    }
+
+    /* Things to do */
+    .card-th {
+        width: 85%;
+        height: 400px;
+    }
+
+    /* Contact */
+    #contact h2 {
+        font-size: 22px;
+    }
+    #inquiryForm {
+        padding: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 10px;
+    }
+    .footer-section {
+        width: 100%;
+    }
+    .footer-bottom {
+        font-size: 12px;
+    }
 }
