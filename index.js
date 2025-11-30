@@ -117,3 +117,51 @@ buttons.forEach(button => {
         });
     });
 });
+
+// fade in animation
+
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+
+
+// contact info function
+// CONTACT FORM SUBMISSION
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent form from submitting normally
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const response = document.querySelector('.prompt-message');
+
+    // Validate fields
+    if (name === "" || email === "" || message === "") {
+        response.textContent = "Please fill in all fields.";
+        response.style.color = "red";
+    } else {
+        response.textContent = "Thank you for your message! We'll get back to you soon.";
+        response.style.color = "green";
+        document.getElementById('inquiryForm').reset();
+
+        // Optional alert
+        // alert("Thank you for your message! We'll get back to you soon.");
+        
+        // Remove message after 5 seconds
+        setTimeout(() => {
+            response.textContent = "";
+        }, 5000);
+    }
+});
+
+
